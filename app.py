@@ -16,6 +16,23 @@ conn_str = st.text_input(
     "Enter your DB connection string (SQLAlchemy URI)",
     value=""
 )
+
+# ↓↓↓ Example / hint for how to format your URI ↓↓↓
+st.caption(
+    """
+    e.g.  
+    `mssql+pyodbc://username:pa%23ss@db-host:1433/sample_db?\
+driver=ODBC+Driver+17+for+SQL+Server&TrustServerCertificate=yes`
+    
+    • replace `username:pa%23ss` with `<USER>:<PASSWORD>` (note `%23` is `#`)  
+    • replace `db-host:1433` with your `<HOST>:<PORT>`  
+    • replace `sample_db` with your `<DATABASE>`  
+    • encode any special characters (e.g. `#` → `%23`, `@` → `%40`)  
+    • adjust `driver=` and other query-params as needed
+    """
+)
+# ↑↑↑ end example ↑↑↑
+
 if not conn_str:
     st.warning("▶️ Please paste your connection string above and press Enter.")
     st.stop()
