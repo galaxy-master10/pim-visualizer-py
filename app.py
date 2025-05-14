@@ -14,7 +14,7 @@ st.title("🔍 Advanced ERD Explorer")
 # 1) Get connection string
 conn_str = st.text_input(
     "Enter your DB connection string (SQLAlchemy URI)",
-    value="mssql+pyodbc://SA:%23said8500@localhost:1433/Digit.Pim?driver=ODBC+Driver+17+for+SQL+Server&TrustServerCertificate=yes"
+    value=""
 )
 if not conn_str:
     st.warning("▶️ Please paste your connection string above and press Enter.")
